@@ -1,4 +1,4 @@
-job:
-  script:
-  - echo "hello world"  
-  - echo date
+build-docker:
+    stage: build
+    script: 
+    - docker build -t minha-imagem .
