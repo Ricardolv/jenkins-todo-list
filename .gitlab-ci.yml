@@ -6,10 +6,6 @@ stages:
   - test
   - deploy
 
-variables:
-  DOCKER_HOST: tcp://docker:2375/
-  DOCKER_DRIVER: overlay2
-
 build-docker:
     services:
     - docker:dind
@@ -24,11 +20,29 @@ build-docker:
     - docker tag minha-imagem 272001/minha-imagem:latest
     - docker push 272001/minha-imagem:latest
 
+
 build-project:
+    services:
+    - docker:dind
+    - mysql:5.7
+    variables:
+        MYSQL_USER: devops_dev
+        MYSQL_PASSWORD: mestre
+        MYSQL_DATABASE: todo_dev
+        MYSQL_ROOT_PASSWORD: senha
+
+        DB_NAME: 'todo_dev'
+        DB USER: 'devops_dev'
+        DB_PASSWORD: 'mestre'
+        DB_PORT: '3306'
+        SECRET_KEY: 'r*5ltfzw-61ksdm41fuul8+hxs$86yo9%k1%k=(!@=-wv4qtyv'
+
     stage: build
+    image: 272001/minha-imagem:latest
     tags:
     - executor-tarefas
     dependencies:
-      - build-docker
+    - build-docker
     script:
-    - echo "runner"
+    - python manage.py makemigrations
+    - python manage.py migrate
