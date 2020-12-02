@@ -13,3 +13,10 @@ build-docker:
     - docker build -t minha-imagem .
     - docker tag minha-imagem 272001/minha-imagem:latest
     - docker push 272001/minha-imagem:latest
+
+build-project:
+    stage: build
+    tags:
+    - executor-tarefas
+    script:
+    - echo "runner"
