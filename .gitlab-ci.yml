@@ -33,7 +33,7 @@ build-project:
         MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
 
         DB_NAME: $DB_DATABASE
-        DB USER: $DB_USER
+        DB_USER: $DB_USER
         DB_PASSWORD: $DB_PASSWORD
         DB_PORT: '3306'
         DB_HOST: 'mysql'
@@ -62,7 +62,7 @@ test-project:
       MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
 
       DB_NAME: $DB_DATABASE
-      DB USER: $DB_USER
+      DB_USER: $DB_USER
       DB_PASSWORD: $DB_PASSWORD
       DB_PORT: '3306'
       DB_HOST: 'mysql'
