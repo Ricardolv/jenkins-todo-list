@@ -49,6 +49,7 @@ build-project:
     - python manage.py migrate
 
 test-project:
+  image: 272001/minha-imagem:latest
   stage: test
 
   services:
