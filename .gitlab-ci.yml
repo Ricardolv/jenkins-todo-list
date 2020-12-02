@@ -1,4 +1,4 @@
-image: docker:stable
+image: docker:19.03.0
 
 stages:
   - pre-build
@@ -8,7 +8,7 @@ stages:
 
 build-docker:
     services:
-    - docker:dind
+    - docker:19.03.0-dind
 
     before_script:
     - docker info
