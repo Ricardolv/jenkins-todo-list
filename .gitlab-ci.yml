@@ -22,6 +22,7 @@ build-docker:
 
 
 build-project:
+    image: 272001/minha-imagem:latest
     services:
     - docker:dind
     - mysql:5.7
@@ -35,10 +36,10 @@ build-project:
         DB USER: 'devops_dev'
         DB_PASSWORD: 'mestre'
         DB_PORT: '3306'
+        DB_HOST: 'mysql'
         SECRET_KEY: 'r*5ltfzw-61ksdm41fuul8+hxs$86yo9%k1%k=(!@=-wv4qtyv'
 
     stage: build
-    image: 272001/minha-imagem:latest
     tags:
     - executor-tarefas
     dependencies:
