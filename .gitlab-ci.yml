@@ -1,4 +1,4 @@
-image: docker:19.03.0
+image: docker:stable
 
 stages:
   - pre-build
@@ -6,10 +6,13 @@ stages:
   - test
   - deploy
 
+variables:
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_DRIVER: overlay2
+
 build-docker:
     services:
-    - docker:19.03.0-dind
-    retry: 2
+    - docker:dind
 
     before_script:
     - docker info
