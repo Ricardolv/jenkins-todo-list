@@ -9,6 +9,7 @@ stages:
 build-docker:
     services:
     - docker:19.03.0-dind
+    retry: 2
 
     before_script:
     - docker info
