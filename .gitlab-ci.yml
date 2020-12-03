@@ -75,6 +75,7 @@ stages:
 #   script:
 #   - python -m unittest setUp
 
+
 deploy-project:
   stage: deploy
   tags:
