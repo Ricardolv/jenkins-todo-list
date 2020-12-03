@@ -9,7 +9,7 @@ stages:
 build-docker:
     services:
     - docker:dind
-
+    retry: 2
     before_script:
     - docker info
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
@@ -23,6 +23,7 @@ build-docker:
 
 build-project:
     image: 272001/minha-imagem:latest
+    retry: 2
     services:
     - docker:dind
     - mysql:5.7
@@ -74,7 +75,6 @@ test-project:
   - executor-tarefas
   script:
   - python -m unittest setUp
-
 
 deploy-project:
   stage: deploy
