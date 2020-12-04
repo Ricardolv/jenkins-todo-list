@@ -36,7 +36,7 @@ build-project:
         DB_NAME: $DB_DATABASE
         DB_USER: $DB_USER
         DB_PASSWORD: $DB_PASSWORD
-        DB_PORT: '3309'
+        DB_PORT: '3306'
         DB_HOST: 'mysql'
         SECRET_KEY: $DB_SECRET_KEY
 
@@ -65,7 +65,7 @@ test-project:
       DB_NAME: $DB_DATABASE
       DB_USER: $DB_USER
       DB_PASSWORD: $DB_PASSWORD
-      DB_PORT: '3309'
+      DB_PORT: '3306'
       DB_HOST: 'mysql'
       SECRET_KEY: $DB_SECRET_KEY
 
