@@ -86,7 +86,7 @@ deploy-project:
   script:
   - tar cfz arquivos.tgz * 
   - scp arquivos.tgz richard@192.168.100.16:/home/richard/deploy/   
-  - ssh richard@192.168.100.16 ' cd /home/richard/deploy/; tar xfz arquivos.tgz; /usr/bin/docker-compose up -d'
+  - ssh richardx@192.168.100.16 ' cd /home/richard/deploy/; tar xfz arquivos.tgz; /usr/bin/docker-compose up -d'
 
 notification-success:
   stage: notification
