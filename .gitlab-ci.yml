@@ -5,6 +5,7 @@ stages:
   - build
   - test
   - deploy
+  - notification
 
 build-docker:
     services:
